@@ -25,7 +25,7 @@ router.post('/notes/new_note', async (req, res) => {
     } else {
         const newNote = new Note({titulo, descripcion});
         await newNote.save();
-        req.flash('success_msg', 'Nota agregada');
+        req.flash('success_msg', 'Nota Agregada');
         res.redirect('/notes');
     }
 });
@@ -44,11 +44,13 @@ router.get('/notes/edit/:id', async (req, res) => {
 router.put('/notes/edit-note/:id', async (req, res) =>{
     const {titulo, descripcion} = req.body;
     await Note.findByIdAndUpdate(req.params.id, {titulo, descripcion});
+    req.flash('success_msg', 'Nota actualizada');
     res.redirect('/notes');
 });
 
 router.delete('/notes/delete/:id', async (req, res) => {
     await Note.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'Nota eliminada');
     res.redirect('/notes');
 });
 module.exports = router;    
