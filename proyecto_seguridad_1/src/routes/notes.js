@@ -30,7 +30,10 @@ router.post('/notes/new_note', async (req, res) => {
 });
 
 router.get('/notes', async (req, res) => {
-    const notes = await Note.find();
-    res.render('notes/notas', {notes});
+    const notas = await Note.find();
+    console.log(notas);
+    res.render('notes/notas', {notas:notas});
+    
+    
 });  
 module.exports = router;
