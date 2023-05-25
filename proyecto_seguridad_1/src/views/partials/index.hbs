@@ -4,62 +4,70 @@
 			<div class="row full-height justify-content-center">
 				<div class="col-12 text-center align-self-center py-5">
 					<div class="section pb-5 pt-5 pt-sm-2 text-center">
-						<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+						<h6 class="mb-0 pb-3"><span>Iniciar Sesión </span><span>Registrarme</span></h6>
 						<input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
 						<label for="reg-log"></label>
 						<div class="card-3d-wrap mx-auto">
 							<div class="card-3d-wrapper">
-								<div class="card-front">									
+								<div class="card-front">
 									<div class="center-wrap">
 										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Log In</h4>
-											<div class="form-group">
-												<input type="email" class="form-style" placeholder="Email">
-												<i class="input-icon uil uil-at"></i>
-											</div>
-											<div class="form-group mt-2">
-												<input type="password" class="form-style" placeholder="Password">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>											
-											<form action="">
+											<h4 class="mb-4 pb-3">Iniciar Sesión</h4>
+											<form action="/users/signin" method="post">
+												<div class="form-group">
+													<input type="email" class="form-style form-control" name="email"
+														placeholder="Email">
+													<i class="input-icon uil uil-at"></i>
+												</div>
+												<div class="form-group mt-2">
+													<input type="password" class="form-style form-control"
+														name="password" placeholder="Contraseña">
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
 												<div>
 													<button type="submit" class="btn mt-4">
 														Login
 													</button>
 												</div>
+												<p class="mb-0 mt-4 text-center"><a href="https:ikneel.github.io/web-1/"
+														class="link">Contraseña olvidada?</a></p>
 											</form>
-											<p class="mb-0 mt-4 text-center"><a href="https:ikneel.github.io/web-1/"
-													class="link">Forgot your password?</a></p>
+
 										</div>
 									</div>
 								</div>
 								<div class="card-back">
 									<div class="center-wrap">
 										<div class="section text-center">
-											<h4 class="mb-3 pb-3">Sign Up</h4>
-											<div class="form-group">
-												<input type="text" class="form-style" placeholder="Full Name">
-												<i class="input-icon uil uil-user"></i>
-											</div>
-											<div class="form-group mt-2">
-												<input type="tel" class="form-style" placeholder="Phone Number">
-												<i class="input-icon uil uil-phone"></i>
-											</div>
-											<div class="form-group mt-2">
-												<input type="email" class="form-style" placeholder="Email">
-												<i class="input-icon uil uil-at"></i>
-											</div>
-											<div class="form-group mt-2">
-												<input type="password" class="form-style" placeholder="Password">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-											<form action="">
+											<h4 class="mb-3 pb-3">Registrarme</h4>
+											<form action="/users/signup" method="post">
+												<div class="form-group">
+													<input type="text" class="form-style form-control" name="name"
+														placeholder="Nombre Completo">
+													<i class="input-icon uil uil-user"></i>
+												</div>
+												<div class="form-group mt-2">
+													<input type="tel" class="form-style form-control" name="phone"
+														placeholder="Telefono">
+													<i class="input-icon uil uil-phone"></i>
+												</div>
+												<div class="form-group mt-2">
+													<input type="email" class="form-style form-control" name="email"
+														placeholder="Email">
+													<i class="input-icon uil uil-at"></i>
+												</div>
+												<div class="form-group mt-2">
+													<input type="password" class="form-style form-control" name="password"
+														placeholder="Contraseña">
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
 												<div>
-													<button type="submit" class=" btn mt-4">
-														Register
+													<button type="submit" class="btn mt-4">
+														Registrarme
 													</button>
 												</div>
 											</form>
+
 										</div>
 									</div>
 								</div>
