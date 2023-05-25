@@ -1,14 +1,13 @@
-const { default: mongoose } = require('mongoose');
-const moongose = require('mongoose');
-const {Schema} = moongose;
-const bcrypt = required('bcryptjs');
+const mongoose = require('mongoose');
+const {Schema} = mongoose;
+const bcrypt = require('bcryptjs');
 
 const UsersSchema = new Schema({
     name: {type: String, required: true},
     phone: {type: String, required: true}, 
     email: {type: String, required: true},
     password: {type: String, required: true}, 
-    date: {type: date, default: Date.now}
+    date: {type: Date, default: Date.now}
 });
 
 UsersSchema.methods.encryptPassword = async (password) => {

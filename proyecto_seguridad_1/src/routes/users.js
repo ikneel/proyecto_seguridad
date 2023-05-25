@@ -1,16 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const Users =   required('../models/Users');
-router.post('/users/signin', (req, res) => {
-    console.log(req.body)
-    res.send('ok');
-});
+const Users = require('../models/Users');
+const passport = require('passport');
+
+router.post('/users/signin', passport.authenticate('local', { 
+    successRedirect: '/notes',
+    failureRedirect: '/', 
+    failureFlash:true
+}));
 
 router.post('/users/signup', async (req, res) => {
     console.log(req.body);
     const {name, phone, email, password} = req.body;
     const errors = [];
-    console.log(password.length);
     if(name.length <= 0){
         errors.push({text: 'Ingresa tu nombre'});
     }
@@ -23,15 +25,16 @@ router.post('/users/signup', async (req, res) => {
         const emailUser = await Users.findOne({email: email});
         if (emailUser){
             req.flash('error_msg', 'El correo ya esta registrado');
-            res.redirect('partials/index');
+            res.redirect('/');
         }
-        const newUser = new Users({name, phone, email, password});
-        newUser.password = await newUser.encryptPassword(password);
-        await newUser.save();
-        req.flash('success_msg', 'Cuenta Registrada. Incia Sesión');
-        res.redirect('partials/index');
-    }
-    console.log(errors);
+        else{
+            const newUser = new Users({name, phone, email, password});
+            newUser.password = await newUser.encryptPassword(password);
+            await newUser.save();
+            req.flash('success_msg', 'Cuenta Registrada. Incia Sesión');
+            res.redirect('/');
+        }
+    }  
 });
 
 module.exports = router;
