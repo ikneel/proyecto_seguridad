@@ -1,11 +1,11 @@
 <div class="col-md-4 mx-auto">
-    <div class="card">
+    <div class="card mt-5">
         <div class="card-header">
-            <h3>Editar nota</h3>
+            <h3 class="note_color text-center">Editar nota</h3>
         </div>
         <div class="card-body">
             <form action="/notes/edit-note/{{note.id}}?_method=put" method="post">
-            <input type="hidden" name="_method" value="put">
+                <input type="hidden" name="_method" value="put">
                 <div class="form-group">
                     <input type="text" name="titulo" class="form-control" placeholder="Titulo" value="{{note.titulo}}">
                 </div>
@@ -13,10 +13,13 @@
                     <textarea name="descripcion" class="form-control">{{note.descripcion}}</textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit">
-                        Guardar
-                    </button>
-                </div> 
+                    <center>
+                        <button class="btn btn-primary mt-4" type="submit">
+                            Guardar
+                        </button>
+                    </center>
+
+                </div>
             </form>
         </div>
     </div>
