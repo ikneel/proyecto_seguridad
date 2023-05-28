@@ -21,10 +21,12 @@
         </div>
     </div>
     {{else}}
-    <div class="card-mx-auto">
+    <div class="card mx-auto mt-5">
         <div class="card-body">
-            <p class="lead">Aun no hay notas</p>
-            <a href="/notes/add" class="btn btn-success btn-block">Crea una </a>
+            <p class="lead text-center note_color">Aun no tienes notas</p>
+            <center>
+                <a href="/notes/add" class="btn btn-success">Crea una </a>        
+            </center>
         </div>
     </div>
     {{/each}}
