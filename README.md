@@ -10,4 +10,9 @@ como ejemplo practico ya que hacemos uso de una base de datos NoSQL, en este cas
 Requisitos
 * De preferencia tener sistema operativo linux debido a la facilidad de instalacion de paquetes
 * Tener instalado MongoDB: Puede consultar su instalacion para ubuntu aqui "https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/"
-* Tener instalado el entorno de ejecucion "Nodejs" y el administrador de paquetes "npm"
+* Tener instalado el entorno de ejecucion "Nodejs"
+## Procedimiento
+* Clonar este repositorio en la ubicacion de tu preferencia
+* Abrir la terminal y dirigirte a la carpeta proyecto_seguridad_1 y ahi ejecutar los siguientes comandos:
+* Instalar el administrador de paquetes npm con "npm install"
+* Iniciar el servicio de mongo con "sudo systemctl mongod start"
