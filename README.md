@@ -7,3 +7,7 @@ Dentro de esta aplicación web realizada en node.js, se encuentra un login entre
 como ejemplo practico ya que hacemos uso de una base de datos NoSQL, en este caso Mongodb.
 
 ### Como desplegar la aplicacion de manera local 
+Requisitos
+* De preferencia tener sistema operativo linux debido a la facilidad de instalacion de paquetes
+* Tener instalado MongoDB: Puede consultar su instalacion para ubuntu aqui "https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/"
+* Tener instalado el entorno de ejecucion "Nodejs" y el administrador de paquetes "npm"
