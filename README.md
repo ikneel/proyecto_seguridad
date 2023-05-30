@@ -6,6 +6,7 @@ ejecute algun servicio en la aplicación.
 Dentro de esta aplicación web realizada en node.js, se encuentra un login entre otras opciones que se utilizarán 
 como ejemplo practico ya que hacemos uso de una base de datos NoSQL, en este caso Mongodb.
 ### Tecnologias empledas en el despliege del proyecto
+------
 *Nodejs
 *MongoDB
 *Visual Studio Code como editor de codigo
