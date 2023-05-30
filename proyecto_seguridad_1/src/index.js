@@ -5,11 +5,16 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 //Inicializaciones
 
 const app = express();
 require('./database');
 require('./config/passport');
+
+//Incersion de la base de datos
+const insertSeedData = require('./seeds/seed')
+
 
 //Configuraciones
 app.set('port', process.env.PORT || 3000);
@@ -25,7 +30,7 @@ app.engine('.hbs', exphbs.engine({
 
 app.set('view engine', '.hbs');
 //Puntos medios
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(session({
     secret: 'ikneel',
@@ -34,6 +39,7 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(bodyParser.json());
 app.use(flash());
 //Variables globales
 app.use((req, res, next) => {
@@ -53,6 +59,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Servidor
 
-app.listen(app.get('port'), () => { 
-    console .log('Server on port', app.get('port'))
-})
+app.listen(app.get('port'), async() => { 
+    console .log('Server on port', app.get('port'));
+
+    //Incersion de la base de datos
+    try{
+        await insertSeedData();
+        console.log('incersion de datos completada');
+    } catch (error){
+        console.error('error al incertar los datos', error)
+    }
+
+});

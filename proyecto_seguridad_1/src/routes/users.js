@@ -6,7 +6,8 @@ const passport = require('passport');
 router.post('/users/signin', passport.authenticate('local', {
     successRedirect: '/notes',
     failureRedirect: '/',
-    failureFlash: true
+    failureFlash: true,
+    
 }));
 
 router.post('/users/signup', async (req, res) => {
