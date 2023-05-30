@@ -5,6 +5,14 @@ como "GET, PUT, POST, DELETE, etc", se manipule la información/datos colocada e
 ejecute algun servicio en la aplicación.
 Dentro de esta aplicación web realizada en node.js, se encuentra un login entre otras opciones que se utilizarán 
 como ejemplo practico ya que hacemos uso de una base de datos NoSQL, en este caso Mongodb.
+### Tecnologias empledas en el despliege del proyecto
+*Nodejs
+*MongoDB
+*Visual Studio Code como editor de codigo
+*CSS
+*JS
+*HTML
+*Burp Suite
 
 ### Como desplegar la aplicacion de manera local 
 Requisitos
