@@ -44,12 +44,17 @@ app.use(flash());
 //Variables globales
 
 user = "";
+au = false;
+app.use((req, res, next)=>{
+    res.locals.ruta = req.path;
+    next();
+});
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
     next();
-})
+});
 //Rutas
 app.use(require('./routes/index'));
 app.use(require('./routes/notes'));

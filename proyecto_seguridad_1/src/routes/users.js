@@ -18,13 +18,14 @@ router.post('/users/signin', async (req, res) => {
       const data = await Users.findOne({ 'email': req.body.email, 'password': req.body.password }).exec();
       if (data) {
         console.log(data);
-        console.log('¡Haz ingresado!'); // Mensaje noob
+        console.log('¡Haz ingresado!');
         console.log(req.body.email);
         user = req.body.email;
         console.log(user)
         res.redirect('/notes');
       } else {
-        res.send("Usario o contraseñas incorrectos");
+        req.flash('error_msg', 'Usuario o Contraseña no encontrados');
+        res.redirect('/');
       }
     } catch (err) {
       res.send(err);
@@ -59,7 +60,10 @@ router.post('/users/signup', async (req, res) => {
 });
 
 router.get('/users/logout', (req, res) => {
+    console.log(user);
     user = 0;
+    console.log(user.length);
+    res.redirect('/');
 });
 
 module.exports = router;
