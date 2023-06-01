@@ -3,13 +3,33 @@ const router = express.Router();
 const Users = require('../models/Users');
 const passport = require('passport');
 
-router.post('/users/signin', passport.authenticate('local', {
+/*router.post('/users/signin', async (req, res, next) => {console.log(req.body); next();},passport.authenticate('local', {
     successRedirect: '/notes',
     failureRedirect: '/',
     failureFlash: true,
     
 }));
+*/
 
+router.post('/users/signin', async (req, res) => {
+    console.log("Ejecución de login en modo no seguro");
+    console.log(req.body)
+    try {
+      const data = await Users.findOne({ 'email': req.body.email, 'password': req.body.password }).exec();
+      if (data) {
+        console.log(data);
+        console.log('¡Haz ingresado!'); // Mensaje noob
+        console.log(req.body.email);
+        user = req.body.email;
+        console.log(user)
+        res.redirect('/notes');
+      } else {
+        res.send("Usario o contraseñas incorrectos");
+      }
+    } catch (err) {
+      res.send(err);
+    }
+});
 router.post('/users/signup', async (req, res) => {
     console.log(req.body);
     const { name, phone, email, password } = req.body;
@@ -39,14 +59,7 @@ router.post('/users/signup', async (req, res) => {
 });
 
 router.get('/users/logout', (req, res) => {
-    req.logout(function (err) {
-        if (err) {
-            // Manejo del error, si es necesario
-            console.error(err);
-            return next(err);
-        }
-        res.redirect('/');
-    });
+    user = 0;
 });
 
 module.exports = router;
