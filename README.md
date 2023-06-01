@@ -25,6 +25,9 @@ Requisitos
 ## Procedimiento
 * Clonar este repositorio en la ubicacion de tu preferencia
 * Abrir la terminal y dirigirte a la carpeta proyecto_seguridad_1 y ahi ejecutar los siguientes comandos:
-* Instalar el administrador de paquetes npm con "npm install"
-* Iniciar el servicio de mongo con "sudo systemctl mongod start"
-* Y por ultimo iniciar la aplicacion con "npm run dev"
+* "npm install" Para instalar el administrador de paquetes npm
+* "sudo systemctl mongod start" Para iniciar el servicio de mongo
+* "npm run dev" Para desplegar la aplicacion
+* Ahor aya puedes visualizar la aplicacion web en tu navegador con la url "localhost:3000/"
+##Desafio CTF Injection NoSQL 
+Dentro de esta aplicacion web hay una bandera la cual esta 
