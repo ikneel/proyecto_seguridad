@@ -31,4 +31,4 @@ Requisitos
 * Ahora ya puedes visualizar la aplicacion web en tu navegador con la url "localhost:3000/"
 * 
 ### Desafio CTF Injection NoSQL 
-Dentro de esta aplicacion web hay una bandera la cual esta 
+Dentro de esta aplicacion web hay una bandera a la cual solo una persona tiene acceso a ella, sera tu tarea examinar la pagina en busca de información que te sirva para encontrarla.
